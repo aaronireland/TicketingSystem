@@ -8,6 +8,9 @@ import (
 	"strings"
 )
 
+// parseReservationRequests creates a theater instance and an array of reservation requests
+// from a text file. Optionally accepts an event name by beginning a line in the file with the
+// value: event
 func parseReservationRequests(filepath string) (Theater, []Reservation, error) {
 	var event string
 	var layout []string
@@ -47,28 +50,6 @@ func parseReservationRequests(filepath string) (Theater, []Reservation, error) {
 		theater = newTheater(strings.Join(layout, "\n"))
 		theater.Event = event
 	}
-	/*
-		theaterLayout := `
-		6 6
-		3 5 5 3
-		4 6 6 4
-		2 8 8 2
-		6 6`
-
-		requests = []Reservation{
-			Reservation{Name: "Smith", Seats: 2},
-			Reservation{Name: "Jones", Seats: 5},
-			Reservation{Name: "Davis", Seats: 6},
-			Reservation{Name: "Wilson", Seats: 100},
-			Reservation{Name: "Johnson", Seats: 3},
-			Reservation{Name: "Williams", Seats: 4},
-			Reservation{Name: "Brown", Seats: 8},
-			Reservation{Name: "Miller", Seats: 12},
-		}
-
-		theater = newTheater(theaterLayout)
-
-	*/
 
 	return theater, requests, err
 }

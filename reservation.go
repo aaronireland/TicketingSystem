@@ -15,6 +15,7 @@ type Reservation struct {
 	Confirmation string `json:"confirmation"`
 }
 
+// readRequestLine extracts a name (i.e. requester) and number of seats requested from a line of text.
 func readRequestLine(line string) (string, int, error) {
 	var name string
 	var seats int
