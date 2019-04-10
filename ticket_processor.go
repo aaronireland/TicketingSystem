@@ -22,6 +22,8 @@ func parseReservationRequests(filepath string) (Theater, []Reservation, error) {
 		return theater, requests, err
 	}
 
+	defer file.Close()
+
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 

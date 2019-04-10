@@ -1,4 +1,6 @@
 src/*
 bin/*
+pkg/*
 data/*
 *.txt
+.envrc
